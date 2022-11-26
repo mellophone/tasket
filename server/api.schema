@@ -1,0 +1,49 @@
+Routes:
+
+POST /users
+ -> Creates a new user
+
+GET /users
+ -> Requires JWT authentication
+ -> Finds your user object
+ -> Returns user object or array of all user objects based on user's authlevel
+
+DELETE /users
+ -> Requires JWT authentication
+ -> Finds your user object
+ -> Deletes a user object based on user's authlevel
+
+POST /login
+ -> Takes U+P
+ -> Finds your user object
+ -> Signs a JWT
+ -> Returns the token
+
+GET /authlevel
+ -> Requires JWT authentication
+ -> Finds your user object
+ -> Returns user's authlevel
+
+UserService functions
+ -> getUser()
+ -> delUser()
+ -> createUser()
+ -> authenticate()
+
+Types of logs
+ -> [URR] User request recieved
+ -> [URS] User request sent
+ -> [DRR] Database response recieved
+ -> [DRS] Database response sent
+ -> [ERR] Error
+
+Tokens:
+
+userToken = {
+    type: "user",
+    id: ObjectID(_id)
+}
+
+adminToken = {
+    type: "admin"
+}

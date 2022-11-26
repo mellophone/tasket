@@ -1,0 +1,29 @@
+.Button {
+  /* background-color: #ff9090; */
+  display: inline;
+  background: none;
+  border: 3px solid #ff6868;
+  color: white;
+
+  outline-color: #d15c5c;
+  outline-style: hidden;
+
+  min-width: 100px;
+
+  border-radius: 20px;
+  height: 35px;
+  margin: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  cursor: pointer;
+}
+
+.Button:hover {
+  border: 3px solid #d15c5c;
+  background-color: #d15c5c;
+  border-radius: 20px;
+  /* color: #ff9090; */
+}
