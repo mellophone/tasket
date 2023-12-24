@@ -1,0 +1,14 @@
+.nav-bar-area {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-bar {
+  display: inline-flex;
+  justify-content: baseline;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+}
