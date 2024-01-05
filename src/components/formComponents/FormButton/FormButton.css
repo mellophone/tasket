@@ -1,0 +1,23 @@
+.form-button {
+  color: white;
+  background-color: var(--tasket-gray);
+  flex-grow: 1px;
+  border: solid 1px white;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+  user-select: none;
+  cursor: pointer;
+  transition: color 100ms linear, background-color 100ms linear;
+}
+
+.form-button:hover {
+  color: var(--tasket-gray);
+  background-color: white;
+}
+
+.form-button:disabled {
+  color: white;
+  background-color: var(--tasket-gray);
+  cursor: not-allowed;
+}

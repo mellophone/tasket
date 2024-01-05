@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-title {
+  user-select: none;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 10px;
+}
+
+.form-error {
+  user-select: none;
+}

@@ -1,11 +1,11 @@
-import NavBar from "./NavBar";
+"use client";
+import { useRouter } from "next/navigation";
 
-const Home = () => {
-  return (
-    <main>
-      <NavBar />
-    </main>
-  );
+const HomeRedirect = () => {
+  const router = useRouter();
+  router.push("/home");
+
+  return <main></main>;
 };
 
-export default Home;
+export default HomeRedirect;

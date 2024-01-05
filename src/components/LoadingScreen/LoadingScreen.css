@@ -1,0 +1,17 @@
+.loading-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floaty 1.5s infinite ease-in-out;
+  gap: 5px;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translate(0px, 0.5vh);
+  }
+  50% {
+    transform: translate(0px, -0.5vh);
+  }
+}

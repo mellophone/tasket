@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Franklin } from "next/font/google";
+import NoSSR from "../components/NoSSR";
 import "./globals.css";
 
 const libreFranklin = Libre_Franklin({
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={libreFranklin.className}>{children}</body>
+      <body className={libreFranklin.className}>
+        <NoSSR>{children}</NoSSR>
+      </body>
     </html>
   );
 }
