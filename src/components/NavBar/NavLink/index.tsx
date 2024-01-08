@@ -1,32 +1,21 @@
-"use client";
-import { Dispatch, SetStateAction } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import "./NavLink.css";
 
-const NavLink = (params: {
-  page: string;
-  currentPageState: [string, Dispatch<SetStateAction<string>>];
-}) => {
-  const router = useRouter();
-  const [currentPage, setCurrentPage] = params.currentPageState;
-
+const NavLink = (params: { page: string }) => {
+  const pathname = usePathname();
   const href = `/${params.page}`.toLowerCase();
 
-  const goToPage = () => {
-    setCurrentPage(params.page);
-    router.push(href);
-  };
-
   return (
-    <a className="nav-link-area" onClick={goToPage}>
+    <Link href={href} className="nav-link-area">
       <span
         className={`nav-link medium-text ${
-          currentPage === params.page ? "underlined" : ""
+          pathname.indexOf(`${href}`) === 0 ? "underlined" : ""
         }`}
       >
         {params.page}
       </span>
-    </a>
+    </Link>
   );
 };
 

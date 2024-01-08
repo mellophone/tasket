@@ -21,7 +21,7 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
       setUserData(userResponse);
       setLoading(false);
     });
-  }, [children, router]);
+  }, [router]);
 
   return loading ? (
     <LoadingScreen />
