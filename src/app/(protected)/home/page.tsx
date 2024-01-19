@@ -1,6 +1,6 @@
 "use client";
 import { useContext } from "react";
-import { UserContext } from "../layout";
+import { UserContext } from "../../../components/constants";
 import GroupBlock from "../../../components/GroupBlock";
 
 const Home = () => {

@@ -5,8 +5,7 @@ import { useRouter } from "next/navigation";
 import NavBar from "../../components/NavBar";
 import Backend from "../../components/Backend";
 import LoadingScreen from "../../components/LoadingScreen";
-
-export const UserContext = createContext<UserData>({} as UserData);
+import { UserContext, UserData } from "../../components/constants";
 
 const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -37,15 +36,6 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
       </UserContext.Provider>
     </>
   );
-};
-
-export type UserData = {
-  _id: string;
-  email: string;
-  settings: {};
-  groups: {
-    [name: string]: any;
-  };
 };
 
 export default ProtectedLayout;
