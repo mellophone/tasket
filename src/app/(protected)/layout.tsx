@@ -1,14 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import NavBar from "../../components/NavBar";
 import Backend from "../../components/Backend";
 import LoadingScreen from "../../components/LoadingScreen";
 
+export const UserContext = createContext<UserData>({} as UserData);
+
 const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState<UserData>({} as UserData);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,9 +30,22 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
   ) : (
     <>
       <NavBar />
-      <div className="content-space">{children}</div>
+      <UserContext.Provider value={userData}>
+        <div className="content-space">
+          <div className="content-area">{children}</div>
+        </div>
+      </UserContext.Provider>
     </>
   );
+};
+
+export type UserData = {
+  _id: string;
+  email: string;
+  settings: {};
+  groups: {
+    [name: string]: any;
+  };
 };
 
 export default ProtectedLayout;
